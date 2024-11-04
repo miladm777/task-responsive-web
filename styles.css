@@ -1,0 +1,142 @@
+@import url("./fonts.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body,
+* {
+  font-family: "Vazirmatn";
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --color-primary-100: #1e1e1e;
+  --color-primary-200: #324775;
+  --color-primary-300: #8e8e8e;
+  --color-primary-400: #219f94;
+  --color-primary-500: #aecedd;
+
+  --border-radius: 8px;
+  --border-radius-L: 10px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  /* min-width: 300px;
+  max-width: 350px; */
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+.requestes {
+  /* border: 2px solid violet; */
+  margin: 2rem;
+  /* height: 300px; */
+
+  /* min-width: 300px; */
+}
+
+.requestes__number {
+  background-color: var(--color-primary-500);
+  width: 7vw;
+  height: 7vw;
+  /* height: same-as-width; */
+
+  text-align: center;
+  vertical-align: center;
+  line-height: 7vw;
+  color: var(--color-primary-200);
+  font-weight: 700px;
+  font-size: 1.6rem;
+  border-radius: var(--border-radius);
+  display: inline;
+  margin-left: 1rem;
+}
+
+.requestes__header {
+  /* height: 200px; */
+
+  display: flex;
+  flex: row;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.requestes__header a {
+  font-size: 1.4rem;
+  color: var(--color-primary-200);
+  font-weight: 700px;
+  margin-left: auto;
+}
+.requestes__date {
+  font-size: 1rem;
+  color: var(--color-primary-300);
+}
+.requestes__body {
+  display: grid;
+  grid-template-rows: 30% 30% 1fr;
+  grid-template-columns: auto 1fr 40%;
+  grid-template-areas:
+    "req req req "
+    "num num btn "
+    "pic name btn ";
+}
+
+.requestes__body .req {
+  grid-area: req;
+  font-size: 1.8rem;
+  color: var(--color-primary-100);
+  font-weight: 900px;
+  /* margin-top: auto; */
+}
+
+.requestes__body .num {
+  grid-area: num;
+  color: var(--color-primary-300);
+  /* border: 2px solid red; */
+  margin-bottom: auto;
+}
+
+.requestes__body .pic {
+  width: 7vw;
+  height: 7vw;
+  grid-area: pic;
+  border-radius: var(--border-radius);
+}
+.requestes__body .name {
+  align-self: center;
+  grid-area: name;
+  color: var(--color-primary-100);
+}
+.requestes__body .btn {
+  grid-area: btn;
+
+  color: #fff;
+  background-color: var(--color-primary-400);
+  border-radius: var(--border-radius);
+  height: 100%;
+  border: none;
+}
