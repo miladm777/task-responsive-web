@@ -35,14 +35,14 @@ html {
   max-width: 350px; */
 }
 
-@media (min-width: 300px) and (max-width: 768px) {
+@media (min-width: 480px) and (max-width: 900px) {
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(3, 1fr);
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 901px) {
   .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -51,7 +51,7 @@ html {
 }
 .requestes {
   /* border: 2px solid violet; */
-  margin: 2rem;
+  margin: 4rem 2rem;
   /* height: 300px; */
 
   /* min-width: 300px; */
@@ -61,8 +61,6 @@ html {
   background-color: var(--color-primary-500);
   width: 7vw;
   height: 7vw;
-  /* height: same-as-width; */
-
   text-align: center;
   vertical-align: center;
   line-height: 7vw;
@@ -72,6 +70,16 @@ html {
   border-radius: var(--border-radius);
   display: inline;
   margin-left: 1rem;
+  /* border: 2px solid red; */
+}
+
+@media screen and (min-width: 480px) {
+  .requestes__number {
+    width: 5vw;
+    height: 5vw;
+    line-height: 5vw;
+    /* border: 2px solid red; */
+  }
 }
 
 .requestes__header {
@@ -98,7 +106,7 @@ html {
 .requestes__body {
   display: grid;
   grid-template-rows: 30% 30% 1fr;
-  grid-template-columns: auto 1fr 40%;
+  grid-template-columns: auto 1fr 45%;
   grid-template-areas:
     "req req req "
     "num num btn "
@@ -126,17 +134,37 @@ html {
   grid-area: pic;
   border-radius: var(--border-radius);
 }
+
+@media screen and (min-width: 480px) {
+  .requestes__body .pic {
+    width: 5vw;
+    height: 5vw;
+  }
+}
 .requestes__body .name {
   align-self: center;
   grid-area: name;
   color: var(--color-primary-100);
+  font-size: 1.4rem;
+  font-weight: 900px;
 }
 .requestes__body .btn {
   grid-area: btn;
-
   color: #fff;
   background-color: var(--color-primary-400);
   border-radius: var(--border-radius);
   height: 100%;
   border: none;
+  font-size: 1rem;
+}
+
+@media screen and (min-width: 480px) and (max-width: 900px) {
+  .requestes__body .btn {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 901px) {
+  .requestes__body .btn {
+    font-size: 1.4rem;
+  }
 }
